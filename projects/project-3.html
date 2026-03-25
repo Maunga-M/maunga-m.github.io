@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>HR Recruitment Database</title>
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="../style.css" />
+		<link rel="stylesheet" href="../css/projects.css" />
+	</head>
+	<body>
+		<header class="site-header">
+			<div class="project-content-inner">
+				<nav class="nav">
+					<a href="../index.html" class="brand">
+						<span class="material-icons-outlined">home</span>
+					</a>
+					<div class="nav-links">
+						<a href="../index.html#projects">Projects</a>
+					</div>
+				</nav>
+			</div>
+		</header>
+
+		<main class="project-page">
+			<section class="project-hero">
+				<div class="project-content-inner">
+					<div class="project-hero-inner">
+						<span class="project-kicker">Project 03</span>
+
+						<h1 class="project-title">HR Recruitment - Database Design</h1>
+
+						<p class="project-intro">
+							A relational database designed to help a growing company identify
+							and resolve bottlenecks in its hiring process.
+						</p>
+
+						<div class="project-meta">
+							<span class="chip chip-sql">SQL</span>
+							<span class="chip chip-reporting">Database Design</span>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="project-content">
+				<div class="project-content-inner">
+					<!-- PROJECT BACKGROUND -->
+					<section class="project-section" id="background">
+						<div class="project-section-header">
+							<h2>Project Background</h2>
+						</div>
+
+						<p>
+							Kora Solutions is a fictional mid-sized tech company that grew
+							from 150 to over 600 employees in three years. As the team scaled,
+							recruitment became harder to manage. They were running a complex
+							hiring process on a patchwork of tools with no reporting
+							capabilities. As a result, roles that should have closed in six
+							weeks were taking four to five months. Promising candidates were
+							also dropping off or rejecting offers. Without structured data,
+							the team had no way to tell where things were going wrong.
+						</p>
+
+						<p>
+							This project designs a relational database from scratch to give
+							the team the structure they needed to capture the full recruitment
+							process in enough detail to support four areas of analysis:
+						</p>
+
+						<ul>
+							<li>Which stage of the recruitment process takes the longest?</li>
+							<li>
+								Which hiring managers or teams are contributing to delays?
+							</li>
+							<li>Why are candidates dropping out, and at what stage?</li>
+							<li>Which sourcing channels produce the best outcomes?</li>
+						</ul>
+					</section>
+
+					<!-- HOW THE DATABASE WAS DESIGNED -->
+					<section class="project-section" id="design">
+						<div class="project-section-header">
+							<h2>Design Process</h2>
+						</div>
+
+						<p>
+							The design went through three phases: understanding the business
+							process, mapping it to a schema, and checking that the schema
+							could actually answer the questions that mattered.
+						</p>
+
+						<p>The final schema is shown below.</p>
+					</section>
+				</div>
+
+				<!-- Schema image sits outside project-content-inner to break the 760px constraint -->
+				<div class="schema-visual">
+					<img
+						class="schema-diagram"
+						src="../assets/images/project-3/schema.svg"
+						alt="Final database schema — entity relationship diagram"
+					/>
+				</div>
+
+				<div class="project-content-inner">
+					<section class="project-section" id="design-phases">
+						<h3>Phase 1. Map the process first</h3>
+
+						<p>
+							A typical recruitment process was first written out as a plain
+							sequence. These were then mapped to obvious tables such as job
+							openings and candidates.
+						</p>
+
+						<div class="project-visual">
+							<img
+								src="../assets/images/project-3/phase1.svg"
+								alt="Phase 1 — narrative to tables"
+							/>
+						</div>
+
+						<p>
+							However, each table raised its own questions. If there is a
+							feedback table, who is submitting that feedback? That points to an
+							interviewers table. Those interviewers are employees of the
+							company, so an employees table is needed too. And if there are
+							interviewers, there must be interviews for them to be part of.
+							Each question about the data led to another table until the schema
+							was complete.
+						</p>
+
+						<h3>Phase 2. Connect the tables</h3>
+
+						<p>
+							Once the tables were identified, the next step was working out how
+							they relate to each other. Each relationship was driven by the
+							business questions, not just structural logic.
+						</p>
+
+						<ul>
+							<li>
+								<code>stage_events.changed_by</code> links to
+								<code>employees</code> so stage transitions can be attributed to
+								a specific person. This makes it possible to break down
+								time-in-stage by hiring manager or recruiter.
+							</li>
+							<li>
+								<code>source_id</code> sits on both <code>candidates</code> and
+								<code>applications</code>. On candidates it records how they
+								first entered the system. On applications it records which
+								channel drove that specific hire.
+							</li>
+							<li>
+								<code>exit_reason_id</code> and
+								<code>decline_reason_id</code> link to separate tables because
+								mid-process drop-offs and offer declines are different problems
+								that need to be analysed independently.
+							</li>
+						</ul>
+
+						<h3>Phase 3. Decide what goes inside each table</h3>
+
+						<p>
+							With the structure in place, the focus shifted to which columns
+							each table needed and how they should be constrained.
+						</p>
+
+						<ul>
+							<li>
+								<code>stage_events.changed_at</code> is a timestamp rather than
+								a date so time-in-stage can be calculated precisely.
+							</li>
+							<li>
+								<code>feedback.is_submitted</code> is a boolean with a default
+								of <code>false</code>, so missing submissions show up as
+								incomplete rather than simply not existing in the table.
+							</li>
+							<li>
+								<code>applications.exit_reason_id</code> and
+								<code>current_stage_id</code> can be null because an active
+								application has neither of them yet.
+							</li>
+							<li>
+								<code>stage_events.from_stage_id</code> can also be null to
+								handle the first transition, where there is no previous stage to
+								reference.
+							</li>
+						</ul>
+					</section>
+
+					<!-- HOW IT SOLVES THE PROBLEM -->
+					<section class="project-section" id="solution">
+						<div class="project-section-header">
+							<h2>How the Database Solves the Business Problem</h2>
+						</div>
+
+						<ul>
+							<li>
+								<span class="decision-lead-inline"
+									>Finding where time is being lost:</span
+								>
+								Every stage transition is recorded in
+								<code>stage_events</code> with a timestamp. This makes it
+								possible to calculate exactly how long each application sat at
+								each stage and spot where things consistently slow down.
+							</li>
+							<li>
+								<span class="decision-lead-inline"
+									>Attributing delays to specific people or teams:</span
+								>
+								Since <code>changed_by</code> on <code>stage_events</code> links
+								every transition to an employee, time-in-stage can be broken
+								down by hiring manager or recruiter. If one manager's
+								applications consistently sit at review for two weeks while
+								others take two days, that will show up in the data.
+							</li>
+							<li>
+								<span class="decision-lead-inline"
+									>Understanding why candidates are leaving:</span
+								>
+								<code>application_exit_reasons</code> forces structured data
+								entry through the category column This makes it possible to
+								group drop-offs and track them over time. This way we are not
+								just seeing that candidates leave but understanding why.
+							</li>
+							<li>
+								<span class="decision-lead-inline"
+									>Measuring sourcing effectiveness:</span
+								>
+								With <code>source_id</code> on applications, the business can
+								calculate conversion rates by channel. E.g How many LinkedIn
+								applications resulted in a hire versus referrals? Which channel
+								produces hires fastest? That informs where to put the sourcing
+								budget.
+							</li>
+						</ul>
+					</section>
+
+					<!-- REPOSITORY -->
+					<section class="project-section" id="repository">
+						<div class="project-section-header">
+							<h2>Project Repository</h2>
+						</div>
+
+						<p>The full project includes the schema design and SQL script</p>
+
+						<p>
+							<a
+								href="https://github.com/Maunga-M/HR-Recruitment-Database-Design"
+								target="_blank"
+								rel="noopener"
+								class="repo-link"
+								>View the GitHub Repository</a
+							>
+						</p>
+					</section>
+				</div>
+			</section>
+		</main>
+
+		<footer class="footer">
+			<div class="project-content-inner">
+				<div class="footer-inner">
+					<div class="footer-actions project-footer-actions">
+						<a
+							href="../index.html#projects"
+							target="_blank"
+							rel="noopener"
+							dqeA214W3class="button button-secondary"
+						>
+							Back to Projects
+						</a>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</body>
+</html>

@@ -10,14 +10,20 @@
 			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
 			rel="stylesheet"
 		/>
+		<link
+			href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+			rel="stylesheet"
+		/>
 		<link rel="stylesheet" href="style.css" />
-		<title>Your Name | Data Analyst Portfolio</title>
+		<title>Maunga Mulomba | Data Analyst Portfolio</title>
 	</head>
 	<body>
 		<header class="site-header">
 			<div class="container">
 				<nav class="nav">
-					<a href="#" class="brand">Home</a>
+					<a href="../index.html" class="brand">
+						<span class="material-icons-outlined">home</span>
+					</a>
 					<div class="nav-links">
 						<a href="#projects">Projects</a>
 					</div>
@@ -33,7 +39,7 @@
 							<h1>Hello, <br />I'm Maunga</h1>
 							<p class="hero-sub">Data Analyst | SQL | Python | Power BI</p>
 							<p class="hero-copy">
-								I’m a data analyst with a background in business communication
+								I'm a data analyst with a background in business communication
 								and sustainability reporting. I explore data to uncover patterns
 								and present insights through clear analysis and visual
 								reporting. Currently working at the intersection of data,
@@ -60,62 +66,170 @@
 					</div>
 
 					<div class="projects-grid">
-						<article class="project-card">
-							<div>
-								<span class="project-number">01</span>
-
-								<h3 class="project-title">Global Sales Performance Analysis</h3>
-								<p class="project-desc">
-									A reporting project exploring revenue trends, regional
-									performance, and product contribution to understand sales
-									patterns and identify growth opportunities.
-								</p>
-
-								<div class="project-tools">
-									<span class="chip chip-tableau">Tableau</span>
-									<span class="chip chip-viz">Data Visualization</span>
-								</div>
+						<a href="projects/project-1.html" class="project-card">
+							<div class="project-card-image">
+								<img
+									src="assets/images/project-1/thumbnail.svg"
+									alt="Global Sales Performance - Data Visualization"
+								/>
 							</div>
-
-							<a href="projects/project-1.html" class="project-link"
-								>View Project</a
-							>
-						</article>
-
-						<article class="project-card">
-							<div>
-								<span class="project-number">02</span>
-
-								<h3 class="project-title">
-									Revenue Analysis of a Parts Distribution Business
-								</h3>
+							<div class="project-card-title">
+								<h3 class="project-title">Global Sales Performance - Data Visualization</h3>
+							</div>
+							<div class="project-card-desc">
 								<p class="project-desc">
-									Exploratory analysis of order-level data examining warehouse
-									performance and product demand to identify the key drivers of
-									revenue.
+									Exploring revenue trends, regional performance, and product
+									contribution to identify growth opportunities.
 								</p>
-
-								<div class="project-tools">
-									<span class="chip chip-python">Python</span>
-									<span class="chip chip-sql">SQL</span>
-									<span class="chip chip-reporting"
-										>Exploratory Data Analysis</span
+							</div>
+							<div class="project-card-footer">
+								<span class="project-tags">Tableau</span>
+								<span class="arrow-btn">
+									<svg
+										width="14"
+										height="14"
+										viewBox="0 0 14 14"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg"
 									>
-								</div>
+										<path
+											d="M3 7h8M7.5 3.5L11 7l-3.5 3.5"
+											stroke="#fff"
+											stroke-width="1.5"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										/>
+									</svg>
+								</span>
 							</div>
+						</a>
 
-							<a href="projects/project-2.html" class="project-link"
-								>View Project</a
-							>
-						</article>
+						<a href="projects/project-2.html" class="project-card">
+							<div class="project-card-image">
+								<img
+									src="assets/images/project-2/chart-4.png"
+									alt="Parts Distribution Revenue - Exploratory Analysis"
+								/>
+							</div>
+							<div class="project-card-title">
+								<h3 class="project-title">
+									Parts Distribution Revenue - Exploratory Analysis
+								</h3>
+							</div>
+							<div class="project-card-desc">
+								<p class="project-desc">
+									Analysing order-level transaction data to identify the key
+									drivers of revenue across warehouses and product lines.
+								</p>
+							</div>
+							<div class="project-card-footer">
+								<span class="project-tags">Python · SQL</span>
+								<span class="arrow-btn">
+									<svg
+										width="14"
+										height="14"
+										viewBox="0 0 14 14"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<path
+											d="M3 7h8M7.5 3.5L11 7l-3.5 3.5"
+											stroke="#fff"
+											stroke-width="1.5"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										/>
+									</svg>
+								</span>
+							</div>
+						</a>
+
+						<a href="projects/project-3.html" class="project-card">
+							<div class="project-card-image">
+								<img
+									src="assets/images/project-3/schema.svg"
+									alt="HR Recruitment - Database Design"
+								/>
+							</div>
+							<div class="project-card-title">
+								<h3 class="project-title">HR Recruitment - Database Design</h3>
+							</div>
+							<div class="project-card-desc">
+								<p class="project-desc">
+									Designing a relational database from scratch to help a growing
+									company identify bottlenecks in its hiring process.
+								</p>
+							</div>
+							<div class="project-card-footer">
+								<span class="project-tags">SQL</span>
+								<span class="arrow-btn">
+									<svg
+										width="14"
+										height="14"
+										viewBox="0 0 14 14"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<path
+											d="M3 7h8M7.5 3.5L11 7l-3.5 3.5"
+											stroke="#fff"
+											stroke-width="1.5"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										/>
+									</svg>
+								</span>
+							</div>
+						</a>
+
+						<a
+							href="https://github.com/Maunga-M/Data-Cleaning/blob/main/data_cleaning.ipynb"
+							class="project-card"
+						>
+							<div class="project-card-image">
+								<img
+									src="assets/images/project-4/thumbnail.png"
+									alt="Layoffs Dataset - Data Cleaning"
+								/>
+							</div>
+							<div class="project-card-title">
+								<h3 class="project-title">
+									Layoffs Dataset - Data Cleaning
+								</h3>
+							</div>
+							<div class="project-card-desc">
+								<p class="project-desc">
+									Cleaning a real-world dataset of global company layoffs to
+									prepare it for exploratory analysis.
+								</p>
+							</div>
+							<div class="project-card-footer">
+								<span class="project-tags">Python · Pandas</span>
+								<span class="arrow-btn">
+									<svg
+										width="14"
+										height="14"
+										viewBox="0 0 14 14"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<path
+											d="M3 7h8M7.5 3.5L11 7l-3.5 3.5"
+											stroke="#fff"
+											stroke-width="1.5"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										/>
+									</svg>
+								</span>
+							</div>
+						</a>
 					</div>
 				</div>
 			</section>
 
 			<section class="cv-section">
 				<div class="container cv-inner">
-					<h2>Interested in working together?</h2>
-
 					<a
 						href="assets/docs/MaungaMulomba_CV.pdf"
 						target="_blank"
@@ -127,7 +241,6 @@
 				</div>
 			</section>
 
-			<!-- CERTIFICATES SECTION -->
 			<section class="section certs-section" id="certificates">
 				<div class="container">
 					<div class="section-header">
@@ -170,7 +283,6 @@
 								class="cert-img"
 							/>
 						</div>
-						<!-- Add or remove cert-card blocks to match your actual count -->
 					</div>
 				</div>
 			</section>

@@ -13,15 +13,20 @@
 			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
 			rel="stylesheet"
 		/>
-
+		<link
+			href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+			rel="stylesheet"
+		/>
 		<link rel="stylesheet" href="../style.css" />
 		<link rel="stylesheet" href="../css/projects.css" />
 	</head>
 	<body>
 		<header class="site-header">
-			<div class="container">
+			<div class="project-content-inner">
 				<nav class="nav">
-					<a href="../index.html" class="brand">Home</a>
+					<a href="../index.html" class="brand">
+						<span class="material-icons-outlined">home</span>
+					</a>
 					<div class="nav-links">
 						<a href="../index.html#projects">Projects</a>
 					</div>
@@ -35,15 +40,13 @@
 					<div class="project-hero-inner">
 						<span class="project-kicker">Project 01</span>
 
-						<h1 class="project-title">
-							Global Sales Performance Analysis (2015 – 2017)
-						</h1>
+						<h1 class="project-title">Global Sales Performance - Data Visualization</h1>
 
 						<p class="project-intro">
 							Interactive Tableau dashboard analyzing global revenue trends,
 							product performance, geographic sales distribution, and shipping
-							efficiency to investigate patterns behind a late-period decline in
-							sales activity.
+							efficiency from 2015 - 2017 to investigate patterns behind a
+							late-period decline in sales activity.
 						</p>
 
 						<div class="project-meta">
@@ -119,72 +122,77 @@
 
 						<h3>i. Late-Period Decline Is Driven by Falling Order Volume</h3>
 
-						<p>
-							Revenue, profit, and order quantity follow nearly identical
-							trajectories over time, signaling stable margins and consistent
-							profitability across the period.
-						</p>
-
-						<p>
-							Between September 2017 and October 2017, revenue declined by over
-							50%. Profit was down by a similar rate while orders decreased by
-							over 80%.
-						</p>
-
-						<p>
-							Because these three metrics move together, the decline is more
-							consistent with reduced sales activity than with changes in
-							pricing or cost structure.
-						</p>
+						<ul>
+							<li>
+								Revenue, profit, and order quantity follow nearly identical
+								trajectories over time, signaling stable margins and consistent
+								profitability across the period.
+							</li>
+							<li>
+								Between September 2017 and October 2017, revenue declined by
+								over 50%. Profit was down by a similar rate while orders
+								decreased by over 80%.
+							</li>
+							<li>
+								Because these three metrics move together, the decline is more
+								consistent with reduced sales activity than with changes in
+								pricing or cost structure.
+							</li>
+						</ul>
 
 						<h3>
 							ii. Geographic Revenue Is Concentrated but Consistent Across
 							Levels
 						</h3>
 
-						<p>
-							The top markets remain strong when drilling down into regions and
-							countries, which suggests demand is not driven by a single
-							isolated location but by broader regional strength.
-						</p>
-
-						<p>
-							High-performing regions aligned with strong country-level results,
-							indicating that market performance is structurally supported
-							rather than driven by outliers. Lower-performing markets
-							contribute much smaller volumes, which shows that revenue is
-							unevenly distributed geographically.
-						</p>
+						<ul>
+							<li>
+								The top markets remain strong when drilling down into regions
+								and countries, which suggests demand is not driven by a single
+								isolated location but by broader regional strength.
+							</li>
+							<li>
+								High-performing regions aligned with strong country-level
+								results, indicating that market performance is structurally
+								supported rather than driven by outliers.
+							</li>
+							<li>
+								Lower-performing markets contribute much smaller volumes,
+								showing that revenue is unevenly distributed geographically.
+							</li>
+						</ul>
 
 						<h3>iii. Product Revenue Is Concentrated in a Few Categories</h3>
 
-						<p>
-							Fishing generates substantially more revenue than the other
-							categories, which suggests that demand is heavily skewed toward a
-							specific product segment.
-						</p>
-
-						<p>
-							The remaining categories contribute meaningful revenue but at
-							noticeably lower levels. This indicates the product portfolio is
-							not evenly balanced and sales rely heavily on a few key products.
-						</p>
+						<ul>
+							<li>
+								Fishing generates substantially more revenue than the other
+								categories, which suggests that demand is heavily skewed toward
+								a specific product segment.
+							</li>
+							<li>
+								The remaining categories contribute meaningful revenue but at
+								noticeably lower levels, indicating the product portfolio is not
+								evenly balanced.
+							</li>
+						</ul>
 
 						<h3>
 							iv. Shipping Performance Is Operationally Consistent Across Modes
 						</h3>
 
-						<p>
-							Average scheduled days range from one to four days, while
-							fulfillment times remain close to five days regardless of shipping
-							method. This suggests the fulfillment process is standardized and
-							does not vary significantly across delivery options.
-						</p>
-
-						<p>
-							Profit per shipment is also nearly identical across modes, which
-							indicates shipping speed has little impact on profitability.
-						</p>
+						<ul>
+							<li>
+								Average scheduled days range from one to four days, while
+								fulfillment times remain close to five days regardless of
+								shipping method, suggesting the fulfillment process is
+								standardized.
+							</li>
+							<li>
+								Profit per shipment is nearly identical across modes, indicating
+								shipping speed has little impact on profitability.
+							</li>
+						</ul>
 					</section>
 
 					<section class="project-section" id="business-implications">
@@ -266,6 +274,8 @@
 						<p>
 							<a
 								href="https://github.com/Maunga-M/Global-Sales-Performance-Analysis"
+								target="_blank"
+								rel="noopener"
 								class="repo-link"
 								>View the GitHub Repository</a
 							>
@@ -281,15 +291,6 @@
 					<div class="footer-actions project-footer-actions">
 						<a href="../index.html#projects" class="button button-secondary">
 							Back to Projects
-						</a>
-
-						<a
-							href="../assets/docs/MaungaMulomba_CV.pdf"
-							target="_blank"
-							class="footer-cv-link"
-						>
-							<span>Download CV</span>
-							<span class="cv-icon">⬇</span>
 						</a>
 					</div>
 				</div>
