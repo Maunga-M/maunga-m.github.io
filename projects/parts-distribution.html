@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Exploratory Analysis: Parts Distribution Revenue — Maunga</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Miranda+Sans:ital,wght@0,400..700;1,400..700&family=DM+Sans:wght@300;400;500&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,300,0,0"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="../css/style.css" />
+		<link rel="stylesheet" href="../css/projects.css" />
+	</head>
+	<body>
+		<nav class="nav">
+			<a href="index.html" class="nav-home" aria-label="Home">
+				<span class="material-symbols-outlined">home</span>
+			</a>
+			<ul class="nav-links">
+				<li><a href="../index.html#selected-work" class="nav-link">Projects</a></li>
+				<li><a href="../about.html" class="nav-link">About</a></li>
+			</ul>
+		</nav>
+
+		<div class="proj-wrap">
+			<section class="proj-hero">
+				<div class="proj-kicker">Project 04</div>
+				<h1 class="proj-title">
+					Exploratory Analysis: Parts Distribution Revenue
+				</h1>
+				<p class="proj-intro">
+					A Python and SQL analysis of order-level transaction data to identify
+					the key drivers behind revenue performance in a wholesale parts
+					distribution business.
+				</p>
+				<div class="proj-tags">
+					<span class="proj-tag tag-teal">Python</span>
+					<span class="proj-tag tag-purple">SQL</span>
+					<span class="proj-tag tag-neutral">Exploratory Data Analysis</span>
+				</div>
+			</section>
+
+			<div class="proj-section">
+				<div class="proj-section-label">Business Problem</div>
+				<div class="proj-section-body">
+					<p>
+						A parts distribution company wanted to understand what factors drive
+						revenue across its operations. The company sells multiple categories
+						of automotive components through several warehouses and serves both
+						retail and wholesale buyers.
+					</p>
+					<p>The analysis focused on four questions:</p>
+					<div class="proj-questions">
+						<p>1. Which warehouses contribute the most to total revenue?</p>
+						<p>2. How is revenue distributed across product lines?</p>
+						<p>
+							3. How different are retail and wholesale purchasing patterns?
+						</p>
+						<p>
+							4. What explains large order values: higher prices or larger
+							quantities?
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="proj-section">
+				<div class="proj-section-label">Key Insights</div>
+				<div class="proj-section-body">
+					<div class="proj-insight">
+						<div class="proj-insight-title">
+							Revenue is concentrated in two warehouses
+						</div>
+						<div class="proj-image">
+							<img
+								src="../assets/parts-distribution/chart-1.png"
+								alt="Revenue by warehouse"
+							/>
+						</div>
+						<ul class="proj-bullets">
+							<li>
+								Central and North warehouses generate the majority of company
+								revenue — around $142K and $100K respectively.
+							</li>
+							<li>
+								The West warehouse contributes less than half of North's
+								revenue, suggesting a smaller regional market or underutilised
+								capacity.
+							</li>
+						</ul>
+					</div>
+
+					<div class="proj-insight">
+						<div class="proj-insight-title">
+							A small number of product lines generate most revenue
+						</div>
+						<div class="proj-image">
+							<img
+								src="../assets/parts-distribution/chart-2.png"
+								alt="Revenue by product line"
+							/>
+						</div>
+						<ul class="proj-bullets">
+							<li>
+								Suspension and Traction and Frame and Body together generate a
+								large share of total sales.
+							</li>
+							<li>
+								Demand is concentrated in two segments. Supply chain disruptions
+								in these categories could significantly impact overall
+								performance.
+							</li>
+						</ul>
+					</div>
+
+					<div class="proj-insight">
+						<div class="proj-insight-title">
+							Wholesale customers drive the largest transactions
+						</div>
+						<div class="proj-image">
+							<img
+								src="../assets/parts-distribution/chart-3.png"
+								alt="Average order value by client type"
+							/>
+						</div>
+						<ul class="proj-bullets">
+							<li>
+								Wholesale orders average above $700 while retail orders average
+								closer to $165 which is more than a 4x difference.
+							</li>
+							<li>
+								Maintaining strong wholesale relationships is critical for
+								sustaining high revenue levels.
+							</li>
+						</ul>
+					</div>
+
+					<div class="proj-insight">
+						<div class="proj-insight-title">
+							Higher order values are driven by pricing, not quantity
+						</div>
+						<div class="proj-image">
+							<img
+								src="../assets/parts-distribution/chart-4.png"
+								alt="Order economics scatter plot"
+							/>
+						</div>
+						<ul class="proj-bullets">
+							<li>
+								Higher-value products naturally produce larger order totals.
+								Lower-priced components cluster in the $10 to $25 range while
+								engines fall closer to $55 to $65.
+							</li>
+							<li>
+								Shifting product mix toward premium categories could increase
+								revenue without increasing order volume.
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="proj-section">
+				<div class="proj-section-label">Recommendations</div>
+				<div class="proj-section-body">
+					<ul class="proj-bullets">
+						<li>
+							Prioritise operational efficiency and inventory availability at
+							Central and North warehouses.
+						</li>
+						<li>
+							Evaluate the West warehouse. Consider repositioning toward
+							specialised inventory or regional distribution.
+						</li>
+						<li>
+							Focus sales and inventory on Suspension and Traction and Frame and
+							Body products, the strongest demand segments.
+						</li>
+						<li>
+							Strengthen wholesale customer relationships through pricing
+							agreements, loyalty programs, or bulk purchasing incentives.
+						</li>
+						<li>
+							Review product mix to maintain a strong offering in high-value
+							categories like engines and structural components.
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="proj-section proj-section-last">
+				<div class="proj-section-label">Repository</div>
+				<div class="proj-section-body">
+					<p>
+						The full repository includes the dataset, SQL queries, Python
+						analysis scripts, and visualisations used in this analysis.
+					</p>
+					<a
+						href="https://github.com/Maunga-M/Revenue-Analysis-of-a-Parts-Distribution-Business-"
+						target="_blank"
+						rel="noopener"
+						class="proj-repo-link"
+					>
+						<svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+							<path
+								d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+							/>
+						</svg>
+						View on GitHub
+					</a>
+				</div>
+			</div>
+
+			<div class="proj-nav">
+				<a href="company-profile-1.html" class="proj-nav-card">
+					<div class="proj-nav-dir">← Previous</div>
+					<div class="proj-nav-title">
+						Editorial Design: CBS Engineering Company Profile
+					</div>
+				</a>
+				<a href="hr-recruitment.html" class="proj-nav-card proj-nav-next">
+					<div class="proj-nav-dir">Next →</div>
+					<div class="proj-nav-title">
+						Database Design: HR Recruitment Database
+					</div>
+				</a>
+			</div>
+		</div>
+
+		<footer class="footer">
+			<a
+				href="https://github.com/Maunga-M"
+				target="_blank"
+				rel="noopener noreferrer"
+				class="github-link"
+				aria-label="GitHub"
+			>
+				<img src="../assets/github.svg" alt="GitHub" />
+			</a>
+		</footer>
+	</body>
+</html>

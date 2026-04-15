@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Database Design: HR Recruitment — Maunga</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Miranda+Sans:ital,wght@0,400..700;1,400..700&family=DM+Sans:wght@300;400;500&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,300,0,0"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="../css/style.css" />
+		<link rel="stylesheet" href="../css/projects.css" />
+	</head>
+	<body>
+		<nav class="nav">
+			<a href="index.html" class="nav-home" aria-label="Home">
+				<span class="material-symbols-outlined">home</span>
+			</a>
+			<ul class="nav-links">
+				<li><a href="../index.html#selected-work" class="nav-link">Projects</a></li>
+				<li><a href="../about.html" class="nav-link">About</a></li>
+			</ul>
+		</nav>
+
+		<div class="proj-wrap">
+			<section class="proj-hero">
+				<div class="proj-kicker">Project 05</div>
+				<h1 class="proj-title">Database Design: HR Recruitment</h1>
+				<p class="proj-intro">
+					A relational database designed to help a growing company
+					identify and resolve bottlenecks in its hiring process.
+				</p>
+				<div class="proj-tags">
+					<span class="proj-tag tag-teal">SQL</span>
+					<span class="proj-tag tag-purple">Database Design</span>
+				</div>
+			</section>
+
+			<div class="proj-section">
+				<div class="proj-section-label">Business Problem</div>
+				<div class="proj-section-body">
+					<p>
+						Kora Solutions is a fictional mid-sized tech company that grew from
+						150 to over 600 employees in three years. As the team scaled,
+						recruitment became harder to manage. Roles that should have closed
+						in six weeks were taking four to five months, and promising
+						candidates were dropping off or rejecting offers. Without structured
+						data, the team had no way to tell where things were going wrong.
+					</p>
+					<p>
+						This project designs a relational database to capture the full
+						recruitment process in enough detail to support four areas of
+						analysis:
+					</p>
+					<div class="proj-questions">
+						<p>1. Which stage of the recruitment process takes the longest?</p>
+						<p>2. Which hiring managers or teams are contributing to delays?</p>
+						<p>3. Why are candidates dropping out, and at what stage?</p>
+						<p>4. Which sourcing channels produce the best outcomes?</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="proj-section">
+				<div class="proj-section-label">Design Process</div>
+				<div class="proj-section-body">
+					<p>
+						The design went through three phases. Understanding the business
+						process, mapping it to a schema, and verifying the schema could
+						answer the questions that mattered.
+					</p>
+
+					<div class="proj-insight">
+						<div class="proj-insight-title">
+							Phase 1 — Map the process first
+						</div>
+						<div class="proj-image">
+							<img
+								src="../assets/hr-recruitment/phase1.svg"
+								alt="Phase 1 narrative to tables"
+							/>
+						</div>
+						<p class="proj-insight-body-text">
+							A typical recruitment process was written out as a plain sequence,
+							then mapped to tables. Each table raised further questions. A
+							feedback table implies interviewers, interviewers are employees,
+							employees sit in interviews. Each question led to another table
+							until the schema was complete.
+						</p>
+					</div>
+
+					<div class="proj-insight">
+						<div class="proj-insight-title">Phase 2 — Connect the tables</div>
+						<ul class="proj-bullets">
+							<li>
+								<code>stage_events.changed_by</code> links to
+								<code>employees</code> so stage transitions can be attributed to
+								a specific person, making it possible to break down
+								time-in-stage by hiring manager or recruiter.
+							</li>
+							<li>
+								<code>source_id</code> sits on both <code>candidates</code> and
+								<code>applications</code>. On candidates it records first entry,
+								on applications it records which channel drove that specific
+								hire.
+							</li>
+							<li>
+								<code>exit_reason_id</code> and
+								<code>decline_reason_id</code> link to separate tables because
+								mid-process drop-offs and offer declines are different problems
+								that need independent analysis.
+							</li>
+						</ul>
+					</div>
+
+					<div class="proj-insight">
+						<div class="proj-insight-title">
+							Phase 3 — Decide what goes inside each table
+						</div>
+						<ul class="proj-bullets">
+							<li>
+								<code>stage_events.changed_at</code> is a timestamp rather than
+								a date so time-in-stage can be calculated precisely.
+							</li>
+							<li>
+								<code>feedback.is_submitted</code> is a boolean defaulting to
+								<code>false</code> so missing submissions show up as incomplete
+								rather than simply absent.
+							</li>
+							<li>
+								<code>applications.exit_reason_id</code> and
+								<code>current_stage_id</code> are nullable because an active
+								application has neither yet.
+							</li>
+							<li>
+								<code>stage_events.from_stage_id</code> is also nullable to
+								handle the first transition, where there is no previous stage to
+								reference.
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="proj-schema">
+			<img
+				src="../assets/hr-recruitment/schema.svg"
+				alt="Final database schema entity relationship diagram"
+			/>
+		</div>
+
+		<div class="proj-wrap">
+			<div class="proj-section">
+				<div class="proj-section-label">How This Schema Solves the Problem</div>
+				<div class="proj-section-body">
+					<div class="proj-insight">
+						<div class="proj-insight-title">
+							Finding where time is being lost
+						</div>
+						<p class="proj-insight-body-text">
+							Every stage transition is recorded in
+							<code>stage_events</code> with a timestamp. This makes it possible
+							to calculate exactly how long each application sat at each stage
+							and identify where things consistently slow down.
+						</p>
+					</div>
+
+					<div class="proj-insight">
+						<div class="proj-insight-title">
+							Attributing delays to specific people or teams
+						</div>
+						<p class="proj-insight-body-text">
+							<code>changed_by</code> on <code>stage_events</code> links every
+							transition to an employee. Time-in-stage can be broken down by
+							hiring manager or recruiter. If one manager's applications sit at
+							review for two weeks while others take two days, that will show up
+							in the data.
+						</p>
+					</div>
+
+					<div class="proj-insight">
+						<div class="proj-insight-title">
+							Understanding why candidates are leaving
+						</div>
+						<p class="proj-insight-body-text">
+							<code>application_exit_reasons</code> forces structured data entry
+							through a category column, making it possible to group drop-offs
+							and track them over time. The database distinguishes between
+							mid-process exits and offer declines — two different problems that
+							require different responses.
+						</p>
+					</div>
+
+					<div class="proj-insight">
+						<div class="proj-insight-title">
+							Measuring sourcing effectiveness
+						</div>
+						<p class="proj-insight-body-text">
+							With <code>source_id</code> on applications, the business can
+							calculate conversion rates by channel. How many LinkedIn
+							applications resulted in a hire versus referrals, and which
+							channel produces hires fastest. This informs where to put the
+							sourcing budget.
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="proj-section proj-section-last">
+				<div class="proj-section-label">Repository</div>
+				<div class="proj-section-body">
+					<p>The full repository includes the schema design and SQL script.</p>
+					<a
+						href="https://github.com/Maunga-M/HR-Recruitment-Database-Design"
+						target="_blank"
+						rel="noopener"
+						class="proj-repo-link"
+					>
+						<svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+							<path
+								d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+							/>
+						</svg>
+						View on GitHub
+					</a>
+				</div>
+			</div>
+
+			<div class="proj-nav">
+				<a href="parts-distribution.html" class="proj-nav-card">
+					<div class="proj-nav-dir">← Previous</div>
+					<div class="proj-nav-title">
+						Exploratory Analysis: Parts Distribution Revenue
+					</div>
+				</a>
+				<a href="company-profile-2.html" class="proj-nav-card proj-nav-next">
+					<div class="proj-nav-dir">Next →</div>
+					<div class="proj-nav-title">
+						Editorial Design: Metro Money Lenders Company Profile
+					</div>
+				</a>
+			</div>
+		</div>
+
+		<footer class="footer">
+			<a
+				href="https://github.com/Maunga-M"
+				target="_blank"
+				rel="noopener noreferrer"
+				class="github-link"
+				aria-label="GitHub"
+			>
+				<img src="../assets/github.svg" alt="GitHub" />
+			</a>
+		</footer>
+	</body>
+</html>

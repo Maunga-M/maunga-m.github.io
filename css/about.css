@@ -1,0 +1,371 @@
+/* ============================================
+   ABOUT PAGE CSS — about-specific only
+   ============================================ */
+
+.about-body {
+	background: var(--bg);
+}
+
+.about-nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px 60px;
+	position: sticky;
+	top: 0;
+	background: var(--bg);
+	z-index: 100;
+	box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
+}
+
+.about-wrap {
+	max-width: var(--max-width);
+	margin: 0 auto;
+	padding: 0 60px;
+}
+
+/* --- MATERIAL ICONS --- */
+.material-symbols-outlined {
+	font-size: 32px;
+	line-height: 1;
+	display: inline-flex;
+	align-items: center;
+}
+
+.a-icon-label .material-symbols-outlined {
+	font-size: 36px;
+}
+.aw-link .material-symbols-outlined {
+	font-size: 22px;
+	vertical-align: middle;
+}
+
+/* --- HERO --- */
+.a-hero {
+	display: grid;
+	grid-template-columns: 0.4fr 1fr;
+	gap: 64px;
+	align-items: start;
+	padding: 72px 0 64px;
+	border-bottom: 2px solid var(--border);
+}
+
+.a-icon-label {
+	color: var(--orange);
+	margin-bottom: 14px;
+	display: flex;
+	align-items: center;
+}
+
+.a-title {
+	font-family: var(--font-display);
+	font-size: 56px;
+	font-weight: 600;
+	letter-spacing: -0.03em;
+	color: var(--text-primary);
+	line-height: 1.05;
+}
+
+.a-hero-right {
+	display: flex;
+	flex-direction: column;
+	gap: 18px;
+	padding-top: 8px;
+}
+
+.a-hero-right p {
+	font-family: var(--font-body);
+	font-size: 16px;
+	color: var(--text-secondary);
+	line-height: 1.85;
+}
+
+/* --- SECTIONS --- */
+.a-section {
+	display: grid;
+	grid-template-columns: 200px 1fr;
+	gap: 48px;
+	align-items: start;
+	padding: 56px 0;
+	border-bottom: 2px solid var(--border);
+}
+
+.a-last {
+	border-bottom: none;
+	padding-bottom: 80px;
+}
+
+.a-label-col {
+	font-family: var(--font-display);
+	font-size: 26px;
+	font-weight: 600;
+	letter-spacing: -0.01em;
+	color: var(--text-primary);
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.a-section-icon {
+	color: var(--orange);
+	display: flex;
+	align-items: center;
+}
+
+.a-content-col {
+	display: flex;
+	flex-direction: column;
+}
+
+/* --- TIMELINE --- */
+.t-row {
+	display: grid;
+	grid-template-columns: 160px 1fr;
+	gap: 24px;
+	padding: 20px 0;
+}
+.t-row:first-child {
+	padding-top: 0;
+}
+
+.t-year {
+	font-family: var(--font-body);
+	font-size: 14px;
+	color: var(--text-secondary);
+	padding-top: 2px;
+}
+
+.t-role {
+	font-family: var(--font-body);
+	font-size: 16px;
+	font-weight: 600;
+	color: var(--text-primary);
+	margin-bottom: 3px;
+	line-height: 1.4;
+}
+
+.t-org {
+	font-family: var(--font-body);
+	font-size: 14px;
+	color: var(--text-secondary);
+}
+
+/* --- AWARDS --- */
+.aw-row {
+	display: grid;
+	grid-template-columns: 48px 1fr;
+	gap: 20px;
+	padding: 20px 0;
+	align-items: start;
+}
+.aw-row:first-child {
+	padding-top: 0;
+}
+
+.aw-badge {
+	width: 38px;
+	height: 38px;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-family: var(--font-display);
+	font-size: 11px;
+	font-weight: 600;
+	flex-shrink: 0;
+	margin-top: 2px;
+}
+.aw-badge.first {
+	background: var(--orange);
+	color: #fff;
+}
+.aw-badge.second {
+	background: var(--teal);
+	color: #fff;
+}
+
+.aw-name {
+	font-family: var(--font-display);
+	font-size: 16px;
+	font-weight: 600;
+	color: var(--text-primary);
+	letter-spacing: -0.01em;
+	line-height: 1.4;
+	margin-bottom: 5px;
+	display: flex;
+	align-items: center;
+	gap: 4px;
+	flex-wrap: wrap;
+}
+
+.aw-link {
+	color: var(--orange);
+	text-decoration: none;
+	transition: opacity var(--transition);
+	display: inline-flex;
+	align-items: center;
+}
+.aw-link:hover {
+	opacity: 0.65;
+}
+
+.aw-desc {
+	font-family: var(--font-body);
+	font-size: 14px;
+	color: var(--text-secondary);
+	line-height: 1.6;
+}
+
+.about-nav .material-symbols-outlined {
+  font-size: 24px;
+}
+/* --- CERTIFICATES --- */
+.cert-grid {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	grid-auto-rows: 210px;
+	gap: 14px;
+}
+
+.cert-img {
+	border-radius: var(--radius);
+	border: 2px solid var(--border);
+	overflow: hidden;
+	background: var(--bg-card);
+	position: relative;
+	cursor: pointer;
+}
+
+.cert-wide-tall {
+	grid-column: span 2;
+	grid-row: span 2;
+}
+
+.cert-img img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: top;
+	transition: transform var(--transition);
+}
+.cert-img:hover img {
+	transform: scale(1.04);
+}
+
+.cert-zoom-overlay {
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+	width: 34px;
+	height: 34px;
+	background: rgba(255, 255, 255, 0.92);
+	border-radius: 6px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	opacity: 0;
+	transition: opacity var(--transition);
+	color: var(--text-primary);
+}
+.cert-img:hover .cert-zoom-overlay {
+	opacity: 1;
+}
+
+/* --- LIGHTBOX --- */
+.lightbox {
+	position: fixed;
+	inset: 0;
+	background: rgba(0, 0, 0, 0.88);
+	z-index: 1000;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 40px;
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 0.2s ease;
+}
+.lightbox.active {
+	opacity: 1;
+	pointer-events: all;
+}
+
+.lightbox img {
+	max-width: 100%;
+	max-height: 90vh;
+	object-fit: contain;
+	border-radius: var(--radius);
+	box-shadow: 0 24px 64px rgba(0, 0, 0, 0.5);
+}
+
+.lightbox-close {
+	position: absolute;
+	top: 20px;
+	right: 24px;
+	width: 40px;
+	height: 40px;
+	background: rgba(255, 255, 255, 0.12);
+	border: none;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	color: #fff;
+	transition: background 0.2s;
+}
+.lightbox-close:hover {
+	background: rgba(255, 255, 255, 0.25);
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 900px) {
+	.about-nav {
+		padding: 18px 24px;
+	}
+	.about-wrap {
+		padding: 0 24px;
+	}
+	.a-hero {
+		grid-template-columns: 1fr;
+		gap: 32px;
+		padding: 56px 0 48px;
+	}
+	.a-title {
+		font-size: 44px;
+	}
+	.a-section {
+		grid-template-columns: 1fr;
+		gap: 24px;
+	}
+	.a-label-col {
+		font-size: 22px;
+	}
+	.t-row {
+		grid-template-columns: 1fr;
+		gap: 6px;
+	}
+	.cert-grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		grid-auto-rows: 160px;
+	}
+}
+
+@media (max-width: 600px) {
+	.about-nav {
+		padding: 18px 20px;
+	}
+	.about-wrap {
+		padding: 0 20px;
+	}
+	.a-title {
+		font-size: 36px;
+	}
+	.cert-grid {
+		grid-auto-rows: 130px;
+	}
+	.aw-row {
+		grid-template-columns: 40px 1fr;
+		gap: 14px;
+	}
+}

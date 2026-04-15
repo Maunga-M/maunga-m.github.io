@@ -3,306 +3,317 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+		<title>Maunga — Learning & Data</title>
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
-			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+			href="https://fonts.googleapis.com/css2?family=Miranda+Sans:ital,wght@0,400..700;1,400..700&family=DM+Sans:wght@300;400;500&display=swap"
 			rel="stylesheet"
 		/>
 		<link
-			href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,300,0,0"
 			rel="stylesheet"
 		/>
-		<link rel="stylesheet" href="style.css" />
-		<title>Maunga Mulomba | Data Analyst Portfolio</title>
+		<link rel="stylesheet" href="css/style.css" />
 	</head>
 	<body>
-		<header class="site-header">
-			<div class="container">
-				<nav class="nav">
-					<a href="../index.html" class="brand">
-						<span class="material-icons-outlined">home</span>
-					</a>
-					<div class="nav-links">
-						<a href="#projects">Projects</a>
-					</div>
-				</nav>
-			</div>
-		</header>
+		<nav class="nav">
+			<!--  -->
+			<a href="index.html" class="nav-home" aria-label="Home">
+				<span class="material-symbols-outlined">home</span>
+			</a>
+			<ul class="nav-links">
+				<li><a href="#selected-work" class="nav-link">Projects</a></li>
+				<li><a href="about.html" class="nav-link">About</a></li>
+			</ul>
+		</nav>
 
-		<main>
+		<div class="page-wrap">
 			<section class="hero">
-				<div class="container">
-					<div class="hero-layout">
-						<div>
-							<h1>Hello, <br />I'm Maunga</h1>
-							<p class="hero-sub">Data Analyst | SQL | Python | Tableau</p>
-							<p class="hero-copy">
-								I'm a data analyst with a background in business communication
-								and sustainability reporting. I explore data to uncover patterns
-								and present insights through clear analysis and visual
-								reporting. Currently working at the intersection of data,
-								finance and social impact.
-							</p>
-						</div>
-
-						<div class="hero-image-wrap">
-							<div class="hero-image">
-								<img
-									src="assets/images/hero-image.svg"
-									alt="Portfolio hero image"
-								/>
-							</div>
-						</div>
+				<div class="hero-left">
+					<h1 class="hero-name">Hello,<br />I'm Maunga</h1>
+					<div class="hero-roles">
+						<span class="proj-tag tag-teal">Learning designer</span>
+						<span class="proj-tag tag-orange">Data analyst</span>
+						<span class="proj-tag tag-purple">Storyteller</span>
 					</div>
+					<p class="hero-bio">
+						Analytical Learning & Development professional with a background in
+						data analysis and content development. I turn complex information
+						into structured and engaging experiences.
+					</p>
+				</div>
+				<div class="hero-right">
+					<img
+						src="assets/hero-image.svg"
+						alt="Maunga at work"
+						class="hero-img"
+					/>
 				</div>
 			</section>
 
-			<section class="section" id="projects">
-				<div class="container">
-					<div class="section-header">
-						<h2>PROJECTS</h2>
-					</div>
-
-					<div class="projects-grid">
-						<a href="projects/project-1.html" class="project-card">
-							<div class="project-card-image">
-								<img
-									src="assets/images/project-1/thumbnail.svg"
-									alt="Global Sales Performance - Data Visualization"
-								/>
-							</div>
-							<div class="project-card-title">
-								<h3 class="project-title">Global Sales Performance - Data Visualization</h3>
-							</div>
-							<div class="project-card-desc">
-								<p class="project-desc">
-									Exploring revenue trends, regional performance, and product
-									contribution to identify growth opportunities.
-								</p>
-							</div>
-							<div class="project-card-footer">
-								<span class="project-tags">Tableau</span>
-								<span class="arrow-btn">
-									<svg
-										width="14"
-										height="14"
-										viewBox="0 0 14 14"
-										fill="none"
-										xmlns="http://www.w3.org/2000/svg"
-									>
-										<path
-											d="M3 7h8M7.5 3.5L11 7l-3.5 3.5"
-											stroke="#fff"
-											stroke-width="1.5"
-											stroke-linecap="round"
-											stroke-linejoin="round"
-										/>
-									</svg>
-								</span>
-							</div>
-						</a>
-
-						<a href="projects/project-2.html" class="project-card">
-							<div class="project-card-image">
-								<img
-									src="assets/images/project-2/chart-4.png"
-									alt="Parts Distribution Revenue - Exploratory Analysis"
-								/>
-							</div>
-							<div class="project-card-title">
-								<h3 class="project-title">
-									Parts Distribution Revenue - Exploratory Analysis
-								</h3>
-							</div>
-							<div class="project-card-desc">
-								<p class="project-desc">
-									Analysing order-level transaction data to identify the key
-									drivers of revenue across warehouses and product lines.
-								</p>
-							</div>
-							<div class="project-card-footer">
-								<span class="project-tags">Python · SQL</span>
-								<span class="arrow-btn">
-									<svg
-										width="14"
-										height="14"
-										viewBox="0 0 14 14"
-										fill="none"
-										xmlns="http://www.w3.org/2000/svg"
-									>
-										<path
-											d="M3 7h8M7.5 3.5L11 7l-3.5 3.5"
-											stroke="#fff"
-											stroke-width="1.5"
-											stroke-linecap="round"
-											stroke-linejoin="round"
-										/>
-									</svg>
-								</span>
-							</div>
-						</a>
-
-						<a href="projects/project-3.html" class="project-card">
-							<div class="project-card-image">
-								<img
-									src="assets/images/project-3/schema.svg"
-									alt="HR Recruitment - Database Design"
-								/>
-							</div>
-							<div class="project-card-title">
-								<h3 class="project-title">HR Recruitment - Database Design</h3>
-							</div>
-							<div class="project-card-desc">
-								<p class="project-desc">
-									Designing a relational database from scratch to help a growing
-									company identify bottlenecks in its hiring process.
-								</p>
-							</div>
-							<div class="project-card-footer">
-								<span class="project-tags">SQL</span>
-								<span class="arrow-btn">
-									<svg
-										width="14"
-										height="14"
-										viewBox="0 0 14 14"
-										fill="none"
-										xmlns="http://www.w3.org/2000/svg"
-									>
-										<path
-											d="M3 7h8M7.5 3.5L11 7l-3.5 3.5"
-											stroke="#fff"
-											stroke-width="1.5"
-											stroke-linecap="round"
-											stroke-linejoin="round"
-										/>
-									</svg>
-								</span>
-							</div>
-						</a>
-
-						<a
-							href="https://github.com/Maunga-M/Data-Cleaning/blob/main/data_cleaning.ipynb"
-							class="project-card"
-						>
-							<div class="project-card-image">
-								<img
-									src="assets/images/project-4/thumbnail.png"
-									alt="Layoffs Dataset - Data Cleaning"
-								/>
-							</div>
-							<div class="project-card-title">
-								<h3 class="project-title">
-									Layoffs Dataset - Data Cleaning
-								</h3>
-							</div>
-							<div class="project-card-desc">
-								<p class="project-desc">
-									Cleaning a real-world dataset of global company layoffs to
-									prepare it for exploratory analysis.
-								</p>
-							</div>
-							<div class="project-card-footer">
-								<span class="project-tags">Python · Pandas</span>
-								<span class="arrow-btn">
-									<svg
-										width="14"
-										height="14"
-										viewBox="0 0 14 14"
-										fill="none"
-										xmlns="http://www.w3.org/2000/svg"
-									>
-										<path
-											d="M3 7h8M7.5 3.5L11 7l-3.5 3.5"
-											stroke="#fff"
-											stroke-width="1.5"
-											stroke-linecap="round"
-											stroke-linejoin="round"
-										/>
-									</svg>
-								</span>
-							</div>
-						</a>
+			<section class="projects-section" id="selected-work">
+				<div class="section-header">
+					<h2 class="section-title">Selected work</h2>
+					<div class="filter-tabs">
+						<button class="filter-tab active" data-filter="all">All</button>
+						<button class="filter-tab" data-filter="data">Data</button>
+						<button class="filter-tab" data-filter="curriculum">
+							Curriculum
+						</button>
+						<button class="filter-tab" data-filter="content">Content</button>
 					</div>
 				</div>
-			</section>
 
-			<section class="cv-section">
-				<div class="container cv-inner">
+				<div class="projects-grid">
+					<!-- 1. JS Course — L&D, top row -->
 					<a
-						href="assets/docs/MaungaMulomba_CV.pdf"
-						target="_blank"
-						class="cv-button"
+						href="projects/javascript-course.html"
+						class="card curriculum-card"
+						data-category="curriculum"
 					>
-						<span>Download CV</span>
-						<span class="cv-icon">⬇</span>
+						<div class="card-thumb curriculum-thumb">
+							<img
+								src="assets/js-course/console.png"
+								alt="JavaScript Crash Course"
+							/>
+						</div>
+						<div class="card-body">
+							<h3 class="card-title">
+								Curriculum Design: JavaScript Crash Course
+							</h3>
+							<p class="card-desc">
+								A 10-module self-paced JavaScript course with learning
+								objectives defined first, assessments before content, and every
+								exercise tied to a real outcome.
+							</p>
+							<div class="card-footer">
+								<span class="card-tools">HTML · CSS · JS</span>
+								<div class="card-arrow">
+									<svg
+										viewBox="0 0 24 24"
+										fill="none"
+										stroke="currentColor"
+										stroke-width="2.5"
+									>
+										<path d="M5 12h14M12 5l7 7-7 7" />
+									</svg>
+								</div>
+							</div>
+						</div>
+					</a>
+
+					<!-- 2. Global Sales — Data, top row -->
+					<a
+						href="projects/global-sales.html"
+						class="card data-card"
+						data-category="data"
+					>
+						<div class="card-thumb data-thumb">
+							<img
+								src="assets/global-sales/thumbnail.svg"
+								alt="Global Sales Performance"
+							/>
+						</div>
+						<div class="card-body">
+							<h3 class="card-title">
+								Data Visualisation: Global Sales Performance
+							</h3>
+							<p class="card-desc">
+								An interactive Tableau dashboard analysing sales trends,
+								geographic distribution and product performance across a
+								three-year period.
+							</p>
+							<div class="card-footer">
+								<span class="card-tools">Tableau</span>
+								<div class="card-arrow">
+									<svg
+										viewBox="0 0 24 24"
+										fill="none"
+										stroke="currentColor"
+										stroke-width="2.5"
+									>
+										<path d="M5 12h14M12 5l7 7-7 7" />
+									</svg>
+								</div>
+							</div>
+						</div>
+					</a>
+
+					<!-- 3. CBS Company Profile — Content, top row -->
+					<a
+						href="projects/company-profile-1.html"
+						class="card content-card"
+						data-category="content"
+					>
+						<div class="card-thumb content-thumb">
+							<img
+								src="assets/cbs-profile/cover.svg"
+								alt="CBS Engineering Company Profile"
+							/>
+						</div>
+						<div class="card-body">
+							<h3 class="card-title">
+								Editorial Design: CBS Engineering Company Profile
+							</h3>
+							<p class="card-desc">
+								A 21-page company profile for a Zambian construction firm
+								covering seven sections and over 15 documented projects.
+							</p>
+							<div class="card-footer">
+								<span class="card-tools">Canva</span>
+								<div class="card-arrow">
+									<svg
+										viewBox="0 0 24 24"
+										fill="none"
+										stroke="currentColor"
+										stroke-width="2.5"
+									>
+										<path d="M5 12h14M12 5l7 7-7 7" />
+									</svg>
+								</div>
+							</div>
+						</div>
+					</a>
+
+					<!-- 4. Parts Distribution — Data, bottom row -->
+					<a
+						href="projects/parts-distribution.html"
+						class="card data-card"
+						data-category="data"
+					>
+						<div class="card-thumb data-thumb">
+							<img
+								src="assets/parts-distribution/chart-4.png"
+								alt="Parts Distribution Revenue"
+							/>
+						</div>
+						<div class="card-body">
+							<h3 class="card-title">
+								Exploratory Analysis: Parts Distribution Revenue
+							</h3>
+							<p class="card-desc">
+								A Python and SQL analysis identifying what drives revenue across
+								warehouses, product lines and customer types in a wholesale
+								parts business.
+							</p>
+							<div class="card-footer">
+								<span class="card-tools">Python · SQL</span>
+								<div class="card-arrow">
+									<svg
+										viewBox="0 0 24 24"
+										fill="none"
+										stroke="currentColor"
+										stroke-width="2.5"
+									>
+										<path d="M5 12h14M12 5l7 7-7 7" />
+									</svg>
+								</div>
+							</div>
+						</div>
+					</a>
+
+					<!-- 5. HR Recruitment — Data, bottom row -->
+					<a
+						href="projects/hr-recruitment.html"
+						class="card data-card"
+						data-category="data"
+					>
+						<div class="card-thumb data-thumb">
+							<img
+								src="assets/HR-recruitment/schema.svg"
+								alt="HR Recruitment Database"
+							/>
+						</div>
+						<div class="card-body">
+							<h3 class="card-title">Database Design: HR Recruitment</h3>
+							<p class="card-desc">
+								A relational database designed to help a growing company
+								identify where and why its hiring process was slowing down.
+							</p>
+							<div class="card-footer">
+								<span class="card-tools">SQL</span>
+								<div class="card-arrow">
+									<svg
+										viewBox="0 0 24 24"
+										fill="none"
+										stroke="currentColor"
+										stroke-width="2.5"
+									>
+										<path d="M5 12h14M12 5l7 7-7 7" />
+									</svg>
+								</div>
+							</div>
+						</div>
+					</a>
+
+					<!-- 6. Metro Company Profile — Content, bottom row -->
+					<a
+						href="projects/company-profile-2.html"
+						class="card content-card"
+						data-category="content"
+					>
+						<div class="card-thumb content-thumb">
+							<img
+								src="assets/metro-profile/cover.svg"
+								alt="Metro Money Lenders Company Profile"
+							/>
+						</div>
+						<div class="card-body">
+							<h3 class="card-title">
+								Editorial Design: Metro Money Lenders Company Profile
+							</h3>
+							<p class="card-desc">
+								A 10-page profile for a microfinance startup translating four
+								loan products into clear documentation for potential clients
+							</p>
+							<div class="card-footer">
+								<span class="card-tools">Canva</span>
+								<div class="card-arrow">
+									<svg
+										viewBox="0 0 24 24"
+										fill="none"
+										stroke="currentColor"
+										stroke-width="2.5"
+									>
+										<path d="M5 12h14M12 5l7 7-7 7" />
+									</svg>
+								</div>
+							</div>
+						</div>
 					</a>
 				</div>
 			</section>
+		</div>
 
-			<section class="section certs-section" id="certificates">
-				<div class="container">
-					<div class="section-header">
-						<h2>CERTIFICATES</h2>
-					</div>
-
-					<div class="certs-grid">
-						<div class="cert-card">
-							<img
-								src="assets/images/cert-1.jpg"
-								alt="Certificate 1"
-								class="cert-img"
-							/>
-						</div>
-						<div class="cert-card">
-							<img
-								src="assets/images/cert-2.jpg"
-								alt="Certificate 2"
-								class="cert-img"
-							/>
-						</div>
-						<div class="cert-card">
-							<img
-								src="assets/images/cert-3.jpg"
-								alt="Certificate 3"
-								class="cert-img"
-							/>
-						</div>
-						<div class="cert-card">
-							<img
-								src="assets/images/cert-4.jpg"
-								alt="Certificate 4"
-								class="cert-img"
-							/>
-						</div>
-						<div class="cert-card">
-							<img
-								src="assets/images/cert-5.jpg"
-								alt="Certificate 5"
-								class="cert-img"
-							/>
-						</div>
-					</div>
-				</div>
-			</section>
-		</main>
-
-		<footer class="footer" id="contact">
-			<div class="container">
-				<div class="footer-inner">
-					<div class="footer-actions">
-						<a
-							href="https://github.com/Maunga-M/"
-							target="_blank"
-							rel="noopener"
-							class="social-link"
-						>
-							<img src="assets/images/github.svg" alt="GitHub" />
-						</a>
-					</div>
-				</div>
-			</div>
+		<footer class="footer">
+			<a
+				href="https://github.com/Maunga-M"
+				target="_blank"
+				rel="noopener noreferrer"
+				class="github-link"
+				aria-label="GitHub"
+			>
+				<img src="assets/github.svg" alt="GitHub" />
+			</a>
 		</footer>
+
+		<script>
+			const tabs = document.querySelectorAll(".filter-tab");
+			const cards = document.querySelectorAll(".card");
+			tabs.forEach((tab) => {
+				tab.addEventListener("click", () => {
+					tabs.forEach((t) => t.classList.remove("active"));
+					tab.classList.add("active");
+					const filter = tab.dataset.filter;
+					cards.forEach((card) => {
+						card.classList.toggle(
+							"hidden",
+							filter !== "all" && card.dataset.category !== filter,
+						);
+					});
+				});
+			});
+		</script>
 	</body>
 </html>
